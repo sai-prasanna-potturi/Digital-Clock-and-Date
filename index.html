@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Digital Clock and Date</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    
+    <div class="digital-clock-container">
+        <div class="digital-clock">
+            <p  class="digit" id="d-time">00:00:00</p>
+        </div>
+    
+        <div class="date">
+            <p class="digit-date" id="current-date"></p>
+        </div>
+    </div>
+    
+
+    <script>
+        // let  currentTime = document.getElementById("d-time");
+
+        // setInterval(() => {
+        //     let d = new Date();
+        //     currentTime.innerHTML = d.toLocaleTimeString();
+        // },1000);
+
+
+        setInterval(() => {
+            let currentTime = document.getElementById('d-time');
+
+            let time = new Date();
+            currentTime.innerHTML = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        },1000);
+
+
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth();
+        var year = today.getFullYear();
+        document.getElementById('current-date').innerHTML = day + "-" + month + "-" +  year;
+
+         
+    </script>
+</body>
+</html>
